@@ -12,9 +12,6 @@
 		<router-view name="header"></router-view>
 		<router-view></router-view>
 		<router-view name="footer"></router-view>
-		<router-view name="lheader"></router-view>
-		<router-view name='lbody'></router-view>
-		<router-view name="lfooter"></router-view>
 	</div>
 
 	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
@@ -49,16 +46,17 @@
 						default: Body,
 						header: Header,
 						footer: Footer
-					},
-					path: '/login',
-					components: {
-						lBody: LoginBody,
-						lHeader: LoginHeader,
-						lFooter: LoginFooter
 					}
 				},
+				{
+					path: '/login',
+					components: {
+						default: LoginBody,
+						header: LoginHeader,
+						footer: LoginFooter
+					}
+				}
 				// 실습 #1 - '/login' url을 추가하고, LoginHeader, LoginBody, LoginFooter 컴포넌트를 추가해보세요.
-
 			]
 		});
 
