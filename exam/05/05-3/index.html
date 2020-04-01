@@ -5,12 +5,19 @@
   <body>
     <div id="app">
       <!-- 1. -->
-      {{ var a = 10; }} <!-- X, 선언문은 사용 불가능 -->
-      {{ if (true) {return 100} }} <!-- X, 분기 구문은 사용 불가능 -->
-      {{ true ? 100 : 0 }} <!-- O, 삼항 연산자로 표현 가능 -->
-
+      <!--
+        {{ var a = 10; }}
+      -->
+      <!-- X, 선언문은 사용 불가능 -->
+      <!-- 
+        {{ if (true) {return 100} }} 
+      -->
+      <!-- X, 분기 구문은 사용 불가능 -->
+      {{ text=='t1' ? 'text100' : 'text0' }} <!-- O, 삼항 연산자로 표현 가능 -->
+      <br/>
       <!-- 2. -->
       {{ message.split('').reverse().join('') }} <!-- X, 복잡한 연산은 인스턴스 안에서 수행 -->
+      <br/>
       {{ reversedMessage }} <!-- O, 스크립트에서 computed 속성으로 계산 후 최종 값만 표현 -->
     </div>
 
@@ -19,7 +26,8 @@
       new Vue({
         el: '#app',
         data: {
-          message: 'Hello Vue.js!'
+          message: 'Hello Vue.js!',
+          text: 't1'
         },
         computed: {
           reversedMessage: function() {
