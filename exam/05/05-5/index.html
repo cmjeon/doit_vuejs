@@ -4,7 +4,10 @@
   </head>
   <body>
     <div id="app">
-      <button v-on:click="clickBtn">클릭</button>
+      <button v-on:click="doClick('aaa')">클릭</button>
+      <div>
+        <span></span><a v-on:click="doClick('ttt')">클클</a></span>
+      </div>
 		</div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
@@ -12,8 +15,8 @@
       new Vue({
         el: '#app',
         methods: {
-          clickBtn: function() {
-            alert('clicked');
+          doClick: function(str) {
+            alert('clicked: '+str);
           }
         }
       });
